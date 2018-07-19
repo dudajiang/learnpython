@@ -1,0 +1,50 @@
+{
+    "templates": [
+        {
+            "id": 1,
+            "source": "河南",
+            "target": [],
+            "sourcedir": [
+                "/conf"
+            ],
+            "update_type": "update_all"
+        },
+        {
+            "id": 2,
+            "source": "河南",
+            "target": [
+                "湖北",
+                "广东"
+            ],
+            "sourcefile": [
+                "/test/sk.log"
+            ],
+            "update_type": "update_all"
+        },
+        {
+            "id": 3,
+            "source": "河南",
+            "target": [],
+            "sourcefile": [
+                "/test/syscfg-db.properties"
+            ],
+            "update_type": "update_line",
+            "update_name": "irms.jdbc.password",
+            "update_content": {}
+        },
+        {
+            "id": 4,
+            "source": "河南",
+            "target": [],
+            "sourcefile": [
+                "/conf/custcfg-env.properties"
+            ],
+            "update_type": "update_line",
+            "update_name": "HostUrl",
+            "update_content": {
+                "广东": "http://10.245.3.173:8888/res_guangdong/unicom_res_service/query/",
+                "湖北": "http://10.245.3.173:8888/res_hubei/unicom_res_service/query/"
+            }
+        }
+    ]
+}

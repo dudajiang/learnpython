@@ -1,0 +1,21 @@
+{
+    "rootdirs" : [
+        {
+            "name" :  "河南",
+            "rootdir" : "/Users/shirly/ddj/temp/联通/河南"
+        },
+        {
+            "name" :  "广东",
+            "rootdir" : "/Users/shirly/ddj/temp/联通/广东"
+        },
+        {
+            "name" :  "陕西",
+            "rootdir" : "/Users/shirly/ddj/temp/联通/陕西"
+        },
+        {
+            "name" :  "湖北",
+            "rootdir" : "/Users/shirly/ddj/temp/联通/湖北"
+        }
+    ],
+    "backupdir" : "/Users/shirly/ddj/temp/联通备份"
+}
