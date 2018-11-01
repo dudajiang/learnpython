@@ -1,0 +1,7 @@
+# Netscape HTTP Cookie File
+# http://curl.haxx.se/rfc/cookie_spec.html
+# This is a generated file!  Do not edit.
+
+119.18.198.5	FALSE	/	FALSE		zentaosid	38heh2mc5qdtqbmtmtv0kkakn4
+119.18.198.5	FALSE	/zentao/	FALSE	1540803662	lang	zh-cn
+119.18.198.5	FALSE	/zentao/	FALSE	1540803662	theme	default
