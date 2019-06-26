@@ -1,6 +1,7 @@
 import pandas as pd
 from sklearn.linear_model import LogisticRegression
 from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.svm import SVC
 
 print("开始读取数据.................")
 
@@ -17,8 +18,10 @@ x_test = vectorizer.transform(df_test['word_seg'])
 y_train = df_train['class']-1
 
 print("训练数据.................")
-lg = LogisticRegression(C=4,dual=True)
-lg.fit(x_train,y_train)
+# lg = LogisticRegression(C=4,dual=True)
+# lg.fit(x_train,y_train)
+lg = SVC(kernel='rbf',gamma=5, decision_function_shape='ovo')
+lg.fit(x_train, y_train)
 
 y_test = lg.predict(x_test)
 
