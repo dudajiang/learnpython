@@ -72,10 +72,7 @@ def build_all_trees(array):
 
 if __name__ == "__main__":
     questions = [
-        [2, 4, 6, 2],
-        [1, 7, 5, 10],
-        [2, 5, 5, 10],
-        [1, 1, 1, 1]
+        [5, 7, 8, 8],
     ]
 
     for question in questions:
