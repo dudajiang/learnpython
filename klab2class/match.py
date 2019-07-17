@@ -78,6 +78,8 @@ train_x_prepared = full_pipeline.fit_transform(train_x)
 test_x_prepared = full_pipeline.fit_transform(test_x)
 
 
+f = open("out.txt", "w")  
+
 gbm0 = GradientBoostingClassifier(random_state=11)
 gbm0.fit(train_x_prepared, train_y_labels)
 
@@ -86,8 +88,10 @@ test_y_pred = gbm0.predict(test_x_prepared)
 test_y_predprob = gbm0.predict_proba(test_x_prepared)
 test_y_predprob = test_y_predprob[:, 1]
 
-print("Accuracy : %.4g" % metrics.accuracy_score(test_y_labels, test_y_pred))
-print("AUC Score (Train): %f" % metrics.roc_auc_score(test_y_labels, test_y_predprob))
+print("Accuracy : %.4g" % metrics.accuracy_score(test_y_labels, test_y_pred), file = f)
+print("AUC Score (Train): %f" % metrics.roc_auc_score(test_y_labels, test_y_predprob), file = f)
+
+
 
 train_y_pred = gbm0.predict(train_x_prepared)
 train_y_predprob = gbm0.predict_proba(train_x_prepared)
@@ -121,5 +125,6 @@ gbm2 = GradientBoostingClassifier(learning_rate=0.1, random_state=11)
 gsearch2 = GridSearchCV(estimator=gbm2, param_grid=param_test2, scoring='roc_auc', iid=False, cv=5)
 gsearch2.fit(train_x_prepared, train_y_labels)
 print(gsearch2.cv_results_['mean_test_score'],
-      gsearch2.best_params_, gsearch2.best_score_)
+      gsearch2.best_params_, gsearch2.best_score_, file = f)
 
+f.close()
