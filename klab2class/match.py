@@ -115,12 +115,14 @@ print("AUC Score (Train): %f" % metrics.roc_auc_score(train_y_labels, train_y_pr
 # # In[ ]:
 
 
-param_test2 = {'n_estimators': range(20, 101, 10),
-               'max_depth': range(3, 22, 2),
-               'min_samples_split': range(100, 1901, 200),
-               'min_samples_leaf': range(60, 101, 10),
-               'subsample': [0.6, 0.7, 0.75, 0.8, 0.85, 0.9]
+param_test2 = {'n_estimators': range(20, 101, 10)
               }
+# param_test2 = {'n_estimators': range(20, 101, 10),
+#                'max_depth': range(3, 22, 2),
+#                'min_samples_split': range(100, 1901, 200),
+#                'min_samples_leaf': range(60, 101, 10),
+#                'subsample': [0.6, 0.7, 0.75, 0.8, 0.85, 0.9]
+#               }              
 gbm2 = GradientBoostingClassifier(learning_rate=0.1, random_state=11)
 gsearch2 = GridSearchCV(estimator=gbm2, param_grid=param_test2, scoring='roc_auc', iid=False, cv=5)
 gsearch2.fit(train_x_prepared, train_y_labels)
